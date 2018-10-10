@@ -70,7 +70,24 @@ This function should take in two values - base can be a float or an integer; exp
 
         return result
 
+## Recursion on non-numerics : Palindromes
 
+    def isPalin(s):
+      def toChars(s):
+          s = s.lower()
+          ans = ""
+          for char in s:
+            if char in 'abcdefghijklmnopqrstuvwxyz':
+              ans = ans + char
+          return ans
+
+
+      def isPal(s):
+          if len(s) <= 1:
+            return True
+          else:
+            return s[0] == s[-1] and isPal(s[1:-1])
+      return isPal(toChars(s))
 
 
 
